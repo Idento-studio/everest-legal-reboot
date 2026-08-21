@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as VacaturesRouteImport } from './routes/vacatures'
 import { Route as AdvocatenIndexRouteImport } from './routes/advocaten.index'
+import { Route as AdvocatenSlugRouteImport } from './routes/advocaten.$slug'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ExpertisesIndexRouteImport } from './routes/expertises.index'
@@ -36,6 +37,11 @@ const VacaturesRoute = VacaturesRouteImport.update({
 const AdvocatenIndexRoute = AdvocatenIndexRouteImport.update({
   id: '/advocaten/',
   path: '/advocaten/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvocatenSlugRoute = AdvocatenSlugRouteImport.update({
+  id: '/advocaten/$slug',
+  path: '/advocaten/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/vacatures': typeof VacaturesRoute
+  '/advocaten/$slug': typeof AdvocatenSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/expertises/$slug': typeof ExpertisesSlugRoute
   '/advocaten/': typeof AdvocatenIndexRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/vacatures': typeof VacaturesRoute
+  '/advocaten/$slug': typeof AdvocatenSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/expertises/$slug': typeof ExpertisesSlugRoute
   '/advocaten': typeof AdvocatenIndexRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/vacatures': typeof VacaturesRoute
+  '/advocaten/$slug': typeof AdvocatenSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/expertises/$slug': typeof ExpertisesSlugRoute
   '/advocaten/': typeof AdvocatenIndexRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/vacatures'
+    | '/advocaten/$slug'
     | '/blog/$slug'
     | '/expertises/$slug'
     | '/advocaten/'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/vacatures'
+    | '/advocaten/$slug'
     | '/blog/$slug'
     | '/expertises/$slug'
     | '/advocaten'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/vacatures'
+    | '/advocaten/$slug'
     | '/blog/$slug'
     | '/expertises/$slug'
     | '/advocaten/'
@@ -127,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   VacaturesRoute: typeof VacaturesRoute
+  AdvocatenSlugRoute: typeof AdvocatenSlugRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ExpertisesSlugRoute: typeof ExpertisesSlugRoute
   AdvocatenIndexRoute: typeof AdvocatenIndexRoute
@@ -164,6 +177,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvocatenIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advocaten/$slug': {
+      id: '/advocaten/$slug'
+      path: '/advocaten/$slug'
+      fullPath: '/advocaten/$slug'
+      preLoaderRoute: typeof AdvocatenSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/': {
       id: '/blog/'
       path: '/blog'
@@ -199,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   VacaturesRoute: VacaturesRoute,
+  AdvocatenSlugRoute: AdvocatenSlugRoute,
   BlogSlugRoute: BlogSlugRoute,
   ExpertisesSlugRoute: ExpertisesSlugRoute,
   AdvocatenIndexRoute: AdvocatenIndexRoute,
