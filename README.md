@@ -1,14 +1,24 @@
-# Welcome to your Lovable project
+# Everest Elevate
+
+Gebaseerd op de content en branding van hun huidige website, maak een outstanding design nieuwe website voor Everest La
+
+Dit is hun huidige website: https://www.everest-law.eu/nl/
+
+
+
+Maak een multipage website met 1 pagina per dienst, home, contact, vacature pagina en blog pagina
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://everest-legal-reboot.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/e8f2ddac-fc8a-49f5-8725-f400c44f0aaf).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +30,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
