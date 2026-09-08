@@ -71,13 +71,13 @@
   --secondary-foreground: oklch(0.26 0.052 254);
   --muted: oklch(0.948 0.008 85);
   --muted-foreground: oklch(0.505 0.021 254);
-  --accent: oklch(0.71 0.108 72);
+  --accent: oklch(0.6073 0.1024 264.17); /* Everest logo blue #6381C0 */
   --accent-foreground: oklch(0.2 0.03 253);
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: oklch(0.98 0.006 85);
   --border: oklch(0.9 0.009 85);
   --input: oklch(0.9 0.009 85);
-  --ring: oklch(0.71 0.108 72);
+  --ring: oklch(0.6073 0.1024 264.17); /* Everest logo blue #6381C0 */
 
   /* dark surface tokens (navy sections) */
   --ink: oklch(0.203 0.041 254);
